@@ -91,7 +91,7 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Cbr-7g-b0T"/>
-                                    <segue destination="snu-Dp-BiW" kind="show" id="pyu-kr-wnb"/>
+                                    <segue destination="snu-Dp-BiW" kind="show" identifier="stopRecording" id="pyu-kr-wnb"/>
                                 </connections>
                             </button>
                         </subviews>
