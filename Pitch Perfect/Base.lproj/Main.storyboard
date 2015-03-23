@@ -41,6 +41,15 @@
                                     <action selector="playSlowAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="I4j-6w-p31"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgT-3Q-Rf4">
+                                <rect key="frame" x="53" y="360" width="100" height="100"/>
+                                <state key="normal" image="chipMunk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playChipMunkAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="vDR-nQ-iWw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -136,6 +145,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipMunk" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>

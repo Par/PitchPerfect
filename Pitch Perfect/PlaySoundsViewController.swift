@@ -61,6 +61,12 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopAudio(sender: UIButton) {
         audioPlayer.stop()
     }
+    
+    
+    
+    @IBAction func playChipMunkAudio(sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
