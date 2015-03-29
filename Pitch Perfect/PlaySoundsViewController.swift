@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
-
+/**
+*  <#Description#>
+*/
 class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
@@ -17,22 +19,11 @@ class PlaySoundsViewController: UIViewController {
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
-
+    /**
+    <#Description#>
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        if var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
-//        {
-//            var filePathUrl = NSURL.fileURLWithPath(filePath)
-//            audioPlayer = AVAudioPlayer(contentsOfURL: filePathUrl, error: nil)
-//            audioPlayer.enableRate = true
-//        }
-//        else
-//        {
-//            println("filepath is empty")
-//            
-//        }
         
         audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
@@ -41,11 +32,19 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.enableRate = true
     }
 
+    /**
+    <#Description#>
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
     @IBAction func playSlowAudio(sender: UIButton) {
         audioPlayer.stop()
         audioPlayer.rate = 0.5
@@ -54,6 +53,11 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.play()
     }
 
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
     @IBAction func playFastAudio(sender: UIButton) {
         audioPlayer.stop()
         audioPlayer.rate = 1.5
@@ -62,18 +66,31 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.play()
 
     }
-    @IBAction func stopAudio(sender: UIButton) {
-        audioPlayer.stop()
-    }
     
+    /**
+    <#Description#>
     
-    
+    :param: sender <#sender description#>
+    */
     @IBAction func playChipMunkAudio(sender: UIButton) {
         playAudioWithVariablePitch(1000)
 
     }
     
-    //New Function
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
+    @IBAction func stopAudio(sender: UIButton) {
+        audioPlayer.stop()
+    }
+    
+    /**
+    <#Description#>
+    
+    :param: pitch <#pitch description#>
+    */
     func playAudioWithVariablePitch(pitch: Float){
         audioPlayer.stop()
         audioEngine.stop()
@@ -95,6 +112,11 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
     @IBAction func playDarthvaderAudio(sender: UIButton) {
         playAudioWithVariablePitch(-1000)
 
