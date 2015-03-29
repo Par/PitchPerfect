@@ -20,4 +20,10 @@ class RecordedAudio: NSObject{
     *  <#Description#>
     */
     var title: String!
+    
+    override init(){
+        filePathUrl = NSURL(fileURLWithPath: "test")
+        title = ""
+        
+    }
 }
