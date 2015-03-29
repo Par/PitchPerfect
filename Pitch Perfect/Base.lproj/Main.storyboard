@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C2513" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g8U-e6-NYM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Play Sounds View Controller-->
@@ -17,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K5-3t-eKV">
-                                <rect key="frame" x="454" y="134" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K5-3t-eKV">
+                                <rect key="frame" x="172" y="134" width="100" height="100"/>
                                 <state key="normal" image="fast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,20 +25,8 @@
                                     <action selector="playFastAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="QJG-jk-sQ9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-Va-j8Z">
-                                <rect key="frame" x="283" y="496" width="50" height="50"/>
-                                <state key="normal" image="stopaudio">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="fhN-Be-k7y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aka-O0-Ujo">
-                                <rect key="frame" x="29" y="134" width="148" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="fLk-11-IQD"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aka-O0-Ujo">
+                                <rect key="frame" x="16" y="134" width="148" height="100"/>
                                 <state key="normal" image="slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -47,8 +34,8 @@
                                     <action selector="playSlowAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="I4j-6w-p31"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgT-3Q-Rf4">
-                                <rect key="frame" x="53" y="360" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgT-3Q-Rf4">
+                                <rect key="frame" x="40" y="360" width="100" height="100"/>
                                 <state key="normal" image="chipMunk">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -56,8 +43,8 @@
                                     <action selector="playChipMunkAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="vDR-nQ-iWw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-y8-vDz">
-                                <rect key="frame" x="454" y="360" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlk-y8-vDz">
+                                <rect key="frame" x="172" y="360" width="100" height="100"/>
                                 <state key="normal" image="darthvader">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -65,19 +52,43 @@
                                     <action selector="playDarthvaderAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="64u-e5-ivf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhY-Ki-9se">
+                                <rect key="frame" x="260" y="104" width="160" height="160"/>
+                                <state key="normal" image="echo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playEchoAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="QFv-qh-w95"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGA-X0-Nxi">
+                                <rect key="frame" x="260" y="330" width="160" height="160"/>
+                                <state key="normal" image="reverb">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playReverbAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="k0F-YY-5ut"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVH-Va-j8Z">
+                                <rect key="frame" x="197" y="500" width="50" height="50"/>
+                                <state key="normal" image="stopaudio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="snu-Dp-BiW" eventType="touchUpInside" id="fhN-Be-k7y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.064771817677181875" blue="0.18469441720398949" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kMJ-i9-jYM" firstAttribute="top" secondItem="bgT-3Q-Rf4" secondAttribute="bottom" constant="140" id="0GA-BD-ahp"/>
-                            <constraint firstAttribute="centerX" secondItem="WVH-Va-j8Z" secondAttribute="centerX" constant="-8" id="8Gn-Vg-6RS"/>
-                            <constraint firstItem="4K5-3t-eKV" firstAttribute="top" secondItem="s0U-sw-eJd" secondAttribute="bottom" constant="70" id="E15-Me-LRv"/>
-                            <constraint firstItem="Aka-O0-Ujo" firstAttribute="leading" secondItem="360-mS-tx5" secondAttribute="leadingMargin" constant="13" id="E7h-pO-8cH"/>
-                            <constraint firstItem="hlk-y8-vDz" firstAttribute="top" secondItem="bgT-3Q-Rf4" secondAttribute="top" id="Qzd-Wk-B6p"/>
-                            <constraint firstItem="hlk-y8-vDz" firstAttribute="leading" secondItem="4K5-3t-eKV" secondAttribute="leading" id="RJt-w3-EKm"/>
-                            <constraint firstItem="kMJ-i9-jYM" firstAttribute="top" secondItem="WVH-Va-j8Z" secondAttribute="bottom" constant="54" id="goD-Ap-0cR"/>
-                            <constraint firstItem="Aka-O0-Ujo" firstAttribute="top" secondItem="4K5-3t-eKV" secondAttribute="top" id="i3s-je-V9u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4K5-3t-eKV" secondAttribute="trailing" constant="30" id="j7Y-ja-a0Y"/>
-                            <constraint firstItem="bgT-3Q-Rf4" firstAttribute="centerX" secondItem="Aka-O0-Ujo" secondAttribute="centerX" id="wtT-uR-WLv"/>
+                            <constraint firstItem="kMJ-i9-jYM" firstAttribute="top" secondItem="SGA-X0-Nxi" secondAttribute="bottom" constant="110" id="4BQ-b1-tzj"/>
+                            <constraint firstItem="Aka-O0-Ujo" firstAttribute="top" secondItem="s0U-sw-eJd" secondAttribute="bottom" constant="70" id="AQ5-VO-4wx"/>
+                            <constraint firstItem="kMJ-i9-jYM" firstAttribute="top" secondItem="hlk-y8-vDz" secondAttribute="bottom" constant="140" id="cen-c7-rZE"/>
+                            <constraint firstItem="kMJ-i9-jYM" firstAttribute="top" secondItem="WVH-Va-j8Z" secondAttribute="bottom" constant="50" id="qem-uc-RbE"/>
+                            <constraint firstItem="EhY-Ki-9se" firstAttribute="top" secondItem="s0U-sw-eJd" secondAttribute="bottom" constant="40" id="s2q-Q2-tVH"/>
+                            <constraint firstItem="4K5-3t-eKV" firstAttribute="top" secondItem="s0U-sw-eJd" secondAttribute="bottom" constant="70" id="vG6-mc-xCn"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -166,8 +177,10 @@
     <resources>
         <image name="chipMunk" width="100" height="100"/>
         <image name="darthvader" width="100" height="100"/>
+        <image name="echo" width="80" height="80"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
+        <image name="reverb" width="80" height="80"/>
         <image name="slow" width="100" height="100"/>
         <image name="stopaudio" width="50" height="50"/>
         <image name="stoprecording" width="50" height="50"/>

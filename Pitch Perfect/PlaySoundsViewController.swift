@@ -46,7 +46,7 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func playSlowAudio(sender: UIButton) {
-        
+       
         setAudioSpeedRate(0.5)
 
         audioPlayer.play()
@@ -71,8 +71,11 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func playChipMunkAudio(sender: UIButton) {
-        playAudioWithVariablePitch(1000)
 
+        //Play audio at higher pitch.
+        var highPitchEffect = AVAudioUnitTimePitch()
+        highPitchEffect.pitch = 1000
+        playAudioWithEffect(highPitchEffect)
     }
     
     /**
@@ -81,8 +84,7 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func stopAudio(sender: UIButton) {
-        audioPlayer.stop()
-        audioEngine.stop()
+        stopAudioPlayerAndEngine()
     }
     
     /**
@@ -91,36 +93,43 @@ class PlaySoundsViewController: UIViewController {
     :param: rate <#rate description#>
     */
     func setAudioSpeedRate(rate: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAudioPlayerAndEngine()
         audioPlayer.rate = rate
         audioPlayer.currentTime = 0.0
     }
+    
     /**
     <#Description#>
-    
-    :param: pitch <#pitch description#>
     */
-    func playAudioWithVariablePitch(pitch: Float){
+    func stopAudioPlayerAndEngine(){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    //Combined function for Pitch, Reverb and Delay effects
+    /**
+    <#Description#>
+    
+    :param: effect <#effect description#>
+    */
+    func playAudioWithEffect(effect: NSObject){
+        stopAudioPlayerAndEngine()
         
+        //Play audio with effect applied.
+        //Initialize AVPlayerNode and get other nodes as 'effect' from @IBActions.
+        //Connect player node through 'effect' to audio engine output node, start audio engine and play file.
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
+        audioEngine.attachNode(effect as AVAudioNode)
         
-        var changePitchEffect = AVAudioUnitTimePitch()
-        changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
-        
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
+        audioEngine.connect(audioPlayerNode, to: effect as AVAudioNode, format: nil)
+        audioEngine.connect(effect as AVAudioNode, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         audioEngine.startAndReturnError(nil)
-        
         audioPlayerNode.play()
+        
     }
     
     /**
@@ -128,9 +137,36 @@ class PlaySoundsViewController: UIViewController {
     
     :param: sender <#sender description#>
     */
-    @IBAction func playDarthvaderAudio(sender: UIButton) {
-        playAudioWithVariablePitch(-1000)
+    @IBAction func playDarthvaderAudio(sender: UIButton) {        
+        //Play audio at lower pitch.
+        var lowPitchEffect = AVAudioUnitTimePitch()
+        lowPitchEffect.pitch = -1000
+        playAudioWithEffect(lowPitchEffect)
 
+    }
+    
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
+    @IBAction func playEchoAudio(sender: UIButton) {
+        //Play audio with delay effect.
+        var delayEffect = AVAudioUnitDelay()
+        delayEffect.delayTime = 0.7
+        playAudioWithEffect(delayEffect)
+    }
+    
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
+    @IBAction func playReverbAudio(sender: UIButton) {
+        var reverbEffect = AVAudioUnitReverb()
+        reverbEffect.loadFactoryPreset(.LargeRoom2)
+        reverbEffect.wetDryMix = 70
+        playAudioWithEffect(reverbEffect)
     }
     /*
     // MARK: - Navigation
