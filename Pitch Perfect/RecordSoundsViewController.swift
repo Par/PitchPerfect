@@ -26,6 +26,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder:AVAudioRecorder!
     /// <#Description#>
     var recordedAudio:RecordedAudio!
+    
 
     /**
     <#Description#>
@@ -93,6 +94,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     */
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
     
+        // Fix for low volume on device. Setting to playback fixes the issue.
+        var session = AVAudioSession.sharedInstance()
+        session.setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        
         if(flag)
         {
             recordedAudio = RecordedAudio()
