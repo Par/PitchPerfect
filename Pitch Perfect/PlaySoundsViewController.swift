@@ -137,7 +137,7 @@ class PlaySoundsViewController: UIViewController {
     
     :param: sender <#sender description#>
     */
-    @IBAction func playDarthvaderAudio(sender: UIButton) {        
+    @IBAction func playDarthvaderAudio(sender: UIButton) {
         //Play audio at lower pitch.
         var lowPitchEffect = AVAudioUnitTimePitch()
         lowPitchEffect.pitch = -1000

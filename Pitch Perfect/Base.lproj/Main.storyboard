@@ -126,8 +126,29 @@
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Cbr-7g-b0T"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD5-b0-Qgw">
-                                <rect key="frame" x="242" y="379" width="116" height="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQu-JG-73K">
+                                <rect key="frame" x="123" y="460" width="50" height="50"/>
+                                <state key="normal" image="pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="awU-FZ-yay"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l98-0P-yVh">
+                                <rect key="frame" x="418" y="460" width="50" height="50"/>
+                                <state key="normal" image="resume">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resumeRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gWC-a5-V6z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD5-b0-Qgw">
+                                <rect key="frame" x="217" y="378" width="166" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="NXz-2y-usS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -135,18 +156,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.044590537935985775" blue="0.017179531639435308" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="B5i-v9-Vl0" secondAttribute="centerX" id="5AJ-i7-ZPE"/>
-                            <constraint firstAttribute="centerX" secondItem="cg8-wv-2JM" secondAttribute="centerX" id="E8p-uY-fSZ"/>
-                            <constraint firstAttribute="centerX" secondItem="BD5-b0-Qgw" secondAttribute="centerX" constant="-0.5" id="O44-X8-eEB"/>
-                            <constraint firstAttribute="centerY" secondItem="cg8-wv-2JM" secondAttribute="centerY" id="Qsb-sm-l1h"/>
-                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="top" secondItem="cg8-wv-2JM" secondAttribute="bottom" constant="29" id="XpH-wf-iwg"/>
-                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="top" secondItem="BD5-b0-Qgw" secondAttribute="bottom" constant="61" id="gIG-8Q-hMm"/>
+                            <constraint firstItem="l98-0P-yVh" firstAttribute="leading" secondItem="B5i-v9-Vl0" secondAttribute="trailing" constant="93" id="36o-fR-EJ9"/>
+                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="centerX" secondItem="cg8-wv-2JM" secondAttribute="centerX" id="5dD-TQ-hLm"/>
+                            <constraint firstItem="cg8-wv-2JM" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="81v-O4-1hd"/>
+                            <constraint firstItem="IQu-JG-73K" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="123" id="AWV-PG-CDF"/>
+                            <constraint firstItem="l98-0P-yVh" firstAttribute="top" secondItem="B5i-v9-Vl0" secondAttribute="top" id="CHA-zy-owv"/>
+                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="top" secondItem="cg8-wv-2JM" secondAttribute="bottom" constant="28" id="ikD-kQ-MYm"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="top" secondItem="BD5-b0-Qgw" secondAttribute="bottom" constant="62" id="qZP-56-4Z5"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="centerX" secondItem="BD5-b0-Qgw" secondAttribute="centerX" id="vtb-c4-S4H"/>
+                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="xXT-Hv-KGa"/>
+                            <constraint firstItem="IQu-JG-73K" firstAttribute="top" secondItem="B5i-v9-Vl0" secondAttribute="top" id="xnm-dQ-O8K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="m97-vI-MMw"/>
                     <connections>
+                        <outlet property="pauseButton" destination="IQu-JG-73K" id="CNU-T4-koC"/>
                         <outlet property="recordButton" destination="cg8-wv-2JM" id="DB1-aM-wBb"/>
                         <outlet property="recordingInProgress" destination="BD5-b0-Qgw" id="BOt-dj-mam"/>
+                        <outlet property="resumeButton" destination="l98-0P-yVh" id="sfq-3W-ltp"/>
                         <outlet property="stopButton" destination="B5i-v9-Vl0" id="efb-5K-ynV"/>
                         <segue destination="snu-Dp-BiW" kind="show" identifier="stopRecording" id="f8H-RZ-NuA"/>
                     </connections>
@@ -180,6 +207,8 @@
         <image name="echo" width="80" height="80"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
+        <image name="pause" width="50" height="50"/>
+        <image name="resume" width="50" height="50"/>
         <image name="reverb" width="80" height="80"/>
         <image name="slow" width="100" height="100"/>
         <image name="stopaudio" width="50" height="50"/>
