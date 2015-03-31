@@ -14,9 +14,13 @@ import AVFoundation
 */
 class PlaySoundsViewController: UIViewController {
     
+    /// <#Description#>
     var audioPlayer:AVAudioPlayer!
+    /// <#Description#>
     var receivedAudio:RecordedAudio!
+    /// <#Description#>
     var audioEngine:AVAudioEngine!
+    //// <#Description#>
     var audioFile:AVAudioFile!
     
     /**

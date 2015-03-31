@@ -157,13 +157,22 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     }
     
+    /**
+    <#Description#>
+    
+    :param: sender <#sender description#>
+    */
     @IBAction func pauseRecording(sender: UIButton) {
         recordingInProgress.text = "recording paused..."
 
         audioRecorder.pause()
     }
     
+    /**
+    <#Description#>
     
+    :param: sender <#sender description#>
+    */
     @IBAction func resumeRecording(sender: UIButton) {
         recordingInProgress.text = "recording in progress..."
 

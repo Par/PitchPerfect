@@ -147,7 +147,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD5-b0-Qgw">
                                 <rect key="frame" x="217" y="378" width="166" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="166" id="NXz-2y-usS"/>
+                                    <constraint firstAttribute="width" constant="166" id="idn-fT-5sS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,16 +156,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.044590537935985775" blue="0.017179531639435308" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="l98-0P-yVh" firstAttribute="leading" secondItem="B5i-v9-Vl0" secondAttribute="trailing" constant="93" id="36o-fR-EJ9"/>
-                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="centerX" secondItem="cg8-wv-2JM" secondAttribute="centerX" id="5dD-TQ-hLm"/>
+                            <constraint firstAttribute="trailing" secondItem="l98-0P-yVh" secondAttribute="trailing" constant="132" id="6pY-5d-rk3"/>
                             <constraint firstItem="cg8-wv-2JM" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="81v-O4-1hd"/>
-                            <constraint firstItem="IQu-JG-73K" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="123" id="AWV-PG-CDF"/>
-                            <constraint firstItem="l98-0P-yVh" firstAttribute="top" secondItem="B5i-v9-Vl0" secondAttribute="top" id="CHA-zy-owv"/>
-                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="top" secondItem="cg8-wv-2JM" secondAttribute="bottom" constant="28" id="ikD-kQ-MYm"/>
-                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="top" secondItem="BD5-b0-Qgw" secondAttribute="bottom" constant="62" id="qZP-56-4Z5"/>
-                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="centerX" secondItem="BD5-b0-Qgw" secondAttribute="centerX" id="vtb-c4-S4H"/>
-                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="xXT-Hv-KGa"/>
-                            <constraint firstItem="IQu-JG-73K" firstAttribute="top" secondItem="B5i-v9-Vl0" secondAttribute="top" id="xnm-dQ-O8K"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="centerX" secondItem="cg8-wv-2JM" secondAttribute="centerX" id="AfA-nA-5gN"/>
+                            <constraint firstItem="BD5-b0-Qgw" firstAttribute="top" secondItem="cg8-wv-2JM" secondAttribute="bottom" constant="28" id="GeN-gA-MmS"/>
+                            <constraint firstAttribute="centerX" secondItem="cg8-wv-2JM" secondAttribute="centerX" id="RcO-ay-hAe"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="centerX" secondItem="BD5-b0-Qgw" secondAttribute="centerX" id="TBh-WH-oKr"/>
+                            <constraint firstAttribute="centerY" secondItem="cg8-wv-2JM" secondAttribute="centerY" id="gZk-aJ-jwT"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="top" secondItem="BD5-b0-Qgw" secondAttribute="bottom" constant="62" id="hbQ-Gz-bp9"/>
+                            <constraint firstItem="IQu-JG-73K" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="123" id="nb6-3W-66T"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="top" secondItem="l98-0P-yVh" secondAttribute="top" id="ovh-dk-ZVf"/>
+                            <constraint firstItem="B5i-v9-Vl0" firstAttribute="top" secondItem="IQu-JG-73K" secondAttribute="top" id="zLE-hz-hJv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="m97-vI-MMw"/>
