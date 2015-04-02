@@ -14,48 +14,27 @@ import AVFoundation
 */
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
-    /// <#Description#>
     @IBOutlet weak var recordingInProgress: UILabel!
     
-    /// <#Description#>
     @IBOutlet weak var stopButton: UIButton!
-    
-    /// <#Description#>
     @IBOutlet weak var recordButton: UIButton!
-    /// <#Description#>
     @IBOutlet weak var pauseButton: UIButton!
-    
-    /// <#Description#>
     @IBOutlet weak var resumeButton: UIButton!
     
-    /// Description
     var audioRecorder:AVAudioRecorder!
-    /// <#Description#>
     var recordedAudio:RecordedAudio!
     
-
-    /**
-    <#Description#>
-    */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
     }
 
-    /**
-    <#Description#>
-    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /**
-    <#Description#>
-    
-    :param: animated <#animated description#>
-    */
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
         pauseButton.hidden = true
@@ -64,11 +43,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.text = "Tap to Record"
     }
 
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func recordAudio(sender: UIButton) {
         recordButton.enabled = false
         stopButton.hidden = false
@@ -101,12 +75,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
-    /**
-    <#Description#>
-    
-    :param: recorder <#recorder description#>
-    :param: flag     <#flag description#>
-    */
+
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
     
         println("recorder finished recording.")
@@ -128,30 +97,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             stopButton.hidden = true
         }
     }
-    
-    /**
-    <#Description#>
-    
-    :param: segue  <#segue description#>
-    :param: sender <#sender description#>
-    */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "stopRecording")
-        {
-            println("moving to Play effect screen")
 
-            let playSoundVC:PlaySoundsViewController = segue.destinationViewController as PlaySoundsViewController
-            let data = sender as RecordedAudio
-            playSoundVC.receivedAudio = data
-        }
-        
-    }
-
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func stopRecording(sender: UIButton) {
         
         println("stopped recording")
@@ -162,11 +108,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func pauseRecording(sender: UIButton) {
         
         println("recording paused")
@@ -176,11 +117,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.pause()
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func resumeRecording(sender: UIButton) {
         
         println("resume recording")
@@ -190,6 +126,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "stopRecording")
+        {
+            println("moving to Play effect screen")
+            
+            let playSoundVC:PlaySoundsViewController = segue.destinationViewController as PlaySoundsViewController
+            let data = sender as RecordedAudio
+            playSoundVC.receivedAudio = data
+        }
+        
+    }
     
 }
 

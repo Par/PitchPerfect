@@ -14,18 +14,11 @@ import AVFoundation
 */
 class PlaySoundsViewController: UIViewController {
     
-    /// <#Description#>
     var audioPlayer:AVAudioPlayer!
-    /// <#Description#>
     var receivedAudio:RecordedAudio!
-    /// <#Description#>
     var audioEngine:AVAudioEngine!
-    //// <#Description#>
     var audioFile:AVAudioFile!
     
-    /**
-    <#Description#>
-    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,19 +29,12 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.enableRate = true
     }
 
-    /**
-    <#Description#>
-    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
+
     @IBAction func playSlowAudio(sender: UIButton) {
        
         println("play Slow Audio")
@@ -58,11 +44,7 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.play()
     }
 
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
+
     @IBAction func playFastAudio(sender: UIButton) {
         
         println("play fast Audio")
@@ -73,11 +55,6 @@ class PlaySoundsViewController: UIViewController {
 
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func playChipMunkAudio(sender: UIButton) {
 
         println("play chip munk Audio")
@@ -87,14 +64,7 @@ class PlaySoundsViewController: UIViewController {
         highPitchEffect.pitch = 1000
         playAudioWithEffect(highPitchEffect)
     }
-    
-    
-    
-    /**
-    <#Description#>
-    
-    :param: rate <#rate description#>
-    */
+  
     func setAudioSpeedRate(rate: Float){
         
         println("setting audio spped rate")
@@ -104,9 +74,6 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.currentTime = 0.0
     }
     
-    /**
-    <#Description#>
-    */
     func stopAudioPlayerAndEngine(){
         
         println("stop audio player and engine")
@@ -116,12 +83,7 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.reset()
     }
     
-    //Combined function for Pitch, Reverb and Delay effects
-    /**
-    <#Description#>
-    
-    :param: effect <#effect description#>
-    */
+    //Combined function for Pitch, Reverb and Delay audio effects
     func playAudioWithEffect(effect: NSObject){
         stopAudioPlayerAndEngine()
         
@@ -141,11 +103,6 @@ class PlaySoundsViewController: UIViewController {
         
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func playDarthvaderAudio(sender: UIButton) {
         
         println("play Darthvader Audio")
@@ -157,11 +114,6 @@ class PlaySoundsViewController: UIViewController {
 
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func playEchoAudio(sender: UIButton) {
         
         println("play Echo Audio")
@@ -172,11 +124,6 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithEffect(delayEffect)
     }
     
-    /**
-    <#Description#>
-    
-    :param: sender <#sender description#>
-    */
     @IBAction func playReverbAudio(sender: UIButton) {
         
         println("play Revert Audio")
