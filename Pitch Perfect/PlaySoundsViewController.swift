@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 /**
-*  <#Description#>
+*  Class for playback effects
 */
 class PlaySoundsViewController: UIViewController {
     
@@ -51,6 +51,8 @@ class PlaySoundsViewController: UIViewController {
     */
     @IBAction func playSlowAudio(sender: UIButton) {
        
+        println("play Slow Audio")
+
         setAudioSpeedRate(0.5)
 
         audioPlayer.play()
@@ -62,6 +64,8 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func playFastAudio(sender: UIButton) {
+        
+        println("play fast Audio")
         
         setAudioSpeedRate(1.5)
 
@@ -76,20 +80,15 @@ class PlaySoundsViewController: UIViewController {
     */
     @IBAction func playChipMunkAudio(sender: UIButton) {
 
+        println("play chip munk Audio")
+
         //Play audio at higher pitch.
         var highPitchEffect = AVAudioUnitTimePitch()
         highPitchEffect.pitch = 1000
         playAudioWithEffect(highPitchEffect)
     }
     
-    /**
-    <#Description#>
     
-    :param: sender <#sender description#>
-    */
-    @IBAction func stopAudio(sender: UIButton) {
-        stopAudioPlayerAndEngine()
-    }
     
     /**
     <#Description#>
@@ -97,6 +96,9 @@ class PlaySoundsViewController: UIViewController {
     :param: rate <#rate description#>
     */
     func setAudioSpeedRate(rate: Float){
+        
+        println("setting audio spped rate")
+
         stopAudioPlayerAndEngine()
         audioPlayer.rate = rate
         audioPlayer.currentTime = 0.0
@@ -106,6 +108,9 @@ class PlaySoundsViewController: UIViewController {
     <#Description#>
     */
     func stopAudioPlayerAndEngine(){
+        
+        println("stop audio player and engine")
+
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
@@ -142,6 +147,9 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func playDarthvaderAudio(sender: UIButton) {
+        
+        println("play Darthvader Audio")
+
         //Play audio at lower pitch.
         var lowPitchEffect = AVAudioUnitTimePitch()
         lowPitchEffect.pitch = -1000
@@ -155,6 +163,9 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func playEchoAudio(sender: UIButton) {
+        
+        println("play Echo Audio")
+
         //Play audio with delay effect.
         var delayEffect = AVAudioUnitDelay()
         delayEffect.delayTime = 0.7
@@ -167,19 +178,12 @@ class PlaySoundsViewController: UIViewController {
     :param: sender <#sender description#>
     */
     @IBAction func playReverbAudio(sender: UIButton) {
+        
+        println("play Revert Audio")
+
         var reverbEffect = AVAudioUnitReverb()
         reverbEffect.loadFactoryPreset(.LargeRoom2)
         reverbEffect.wetDryMix = 70
         playAudioWithEffect(reverbEffect)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

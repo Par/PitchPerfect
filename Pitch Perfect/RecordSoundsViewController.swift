@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 /**
-*  <#Description#>
+*  Class for recording voice
 */
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
@@ -79,7 +79,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.text = "recording in progress..."
 
         
-        println("in recordAudio")
+        println("recording in progress...")
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
@@ -109,15 +109,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     */
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
     
+        println("recorder finished recording.")
+
         // Fix for low volume on device. Setting to playback fixes the issue.
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayback, error: nil)
         
         if(flag)
         {
-            recordedAudio = RecordedAudio.init()
-            recordedAudio.filePathUrl = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
         
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         }
@@ -138,6 +138,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "stopRecording")
         {
+            println("moving to Play effect screen")
+
             let playSoundVC:PlaySoundsViewController = segue.destinationViewController as PlaySoundsViewController
             let data = sender as RecordedAudio
             playSoundVC.receivedAudio = data
@@ -151,6 +153,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     :param: sender <#sender description#>
     */
     @IBAction func stopRecording(sender: UIButton) {
+        
+        println("stopped recording")
+
         audioRecorder.stop()
         var audioSession = AVAudioSession.sharedInstance()
         audioSession.setActive(false, error: nil)
@@ -163,6 +168,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     :param: sender <#sender description#>
     */
     @IBAction func pauseRecording(sender: UIButton) {
+        
+        println("recording paused")
+
         recordingInProgress.text = "recording paused..."
 
         audioRecorder.pause()
@@ -174,6 +182,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     :param: sender <#sender description#>
     */
     @IBAction func resumeRecording(sender: UIButton) {
+        
+        println("resume recording")
+
         recordingInProgress.text = "recording in progress..."
 
         audioRecorder.record()

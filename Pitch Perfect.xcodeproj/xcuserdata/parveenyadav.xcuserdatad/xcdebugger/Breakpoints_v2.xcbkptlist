@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pitch Perfect/PlaySoundsViewController.swift"
-            timestampString = "449365527.573275"
+            timestampString = "449634012.945012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "playDarthvaderAudio(_:)"
-            landmarkType = "5">
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "PlaySoundsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -31,8 +31,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "init()"
-            landmarkType = "5">
+            landmarkName = "RecordedAudio"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
