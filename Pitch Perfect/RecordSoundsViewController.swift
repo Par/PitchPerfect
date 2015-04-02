@@ -28,7 +28,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     /// <#Description#>
     @IBOutlet weak var resumeButton: UIButton!
     
-    /// <#Description#>
+    /// Description
     var audioRecorder:AVAudioRecorder!
     /// <#Description#>
     var recordedAudio:RecordedAudio!
