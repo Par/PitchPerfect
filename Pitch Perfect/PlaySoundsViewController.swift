@@ -133,4 +133,9 @@ class PlaySoundsViewController: UIViewController {
         reverbEffect.wetDryMix = 70
         playAudioWithEffect(reverbEffect)
     }
+    
+    @IBAction func stopAudio(sender: UIButton) {
+        stopAudioPlayerAndEngine()
+    }
+    
 }
